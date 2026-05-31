@@ -3,7 +3,6 @@ using UnityEngine;
 public class target : MonoBehaviour
 {
     private Rigidbody targetRb;
-    private Vector3 spawnPoint ;
     [SerializeField] 
     private float minForce;
     [SerializeField] 
@@ -19,8 +18,7 @@ public class target : MonoBehaviour
     void Awake()
     {
         targetRb = GetComponent<Rigidbody>();
-        spawnPoint = randomSpwanPosition();
-        transform.position = spawnPoint;
+        transform.position = randomSpwanPosition();
     }
     void Start()
     {
