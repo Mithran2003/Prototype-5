@@ -11,6 +11,8 @@ public class target : MonoBehaviour
     [SerializeField]
     private float xSpwanRange;
     [SerializeField]
+    private float ySpwanPoint;
+    [SerializeField]
     private float torqueRange;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -34,7 +36,7 @@ public class target : MonoBehaviour
     }
     private Vector3 randomSpwanPosition()
     {
-        return new Vector3 (Random.Range(-xSpwanRange,xSpwanRange),-1.75f);
+        return new Vector3 (Random.Range(-xSpwanRange,xSpwanRange),ySpwanPoint);
     }
     private float randomTorque()
     {

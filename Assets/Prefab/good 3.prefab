@@ -153,3 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e4dd26bba104540874308a152822f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::target
+  minForce: 10
+  maxforce: 16.25
+  xSpwanRange: 4.25
+  torqueRange: 5
