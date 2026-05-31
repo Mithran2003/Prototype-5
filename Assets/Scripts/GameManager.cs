@@ -14,17 +14,18 @@ public class GameManager : MonoBehaviour
     private TextMeshProUGUI scoreText;
     [SerializeField]
     private TextMeshProUGUI GameOverText;
+    [SerializeField]
+    private TextMeshProUGUI ScoreText;
     private int score ;  
     private bool gameOver ;  
     [SerializeField]
     private Button RestartButton;
+    [SerializeField]
+    private GameObject titleScreen;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        gameOver = false;
-        score = 0;
-        StartCoroutine(spwanObjects());
-        UpdateScore(0);
+        
     }
 
     // Update is called once per frame
@@ -67,6 +68,14 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);         
     }
-        
+    public void StartGame()
+    {
+        gameOver = false;
+        score = 0;
+        StartCoroutine(spwanObjects());
+        UpdateScore(0);
+        ScoreText.gameObject.SetActive(true);
+        titleScreen.gameObject.SetActive(false);
+    }   
     
 }
