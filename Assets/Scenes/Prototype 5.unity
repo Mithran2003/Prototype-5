@@ -496,6 +496,7 @@ MonoBehaviour:
   - {fileID: 4313211996526120760, guid: ee1f19fa77e088345b747dfed27941ab, type: 3}
   - {fileID: 3804939072364660156, guid: 62afcaf85abc86d4a980bc89107919e6, type: 3}
   - {fileID: 8840525542048602882, guid: cbaab9d54eab97b4db4aeff7ab19a2f3, type: 3}
+  spwanDelay: 1.5
 --- !u!4 &1054773565
 Transform:
   m_ObjectHideFlags: 0
