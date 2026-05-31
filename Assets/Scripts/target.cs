@@ -49,13 +49,13 @@ public class target : MonoBehaviour
     private void OnMouseDown() 
     {
         Destroy(gameObject);
-        if (gameObject.name !="bad 1")
+        if (gameObject.name =="bad 1")
+        {
+            gameManager.UpdateScore(-(ScoreToAdd * 10));
+        }
+        else 
         {
             gameManager.UpdateScore(ScoreToAdd);
-        }
-        else if (gameObject.name == "bad 1")
-        {
-            gameManager.UpdateScore(-ScoreToAdd*10);
         }
         
     }
