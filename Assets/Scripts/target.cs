@@ -49,14 +49,7 @@ public class target : MonoBehaviour
     private void OnMouseDown() 
     {
         Destroy(gameObject);
-        if (gameObject.name =="bad 1")
-        {
-            gameManager.UpdateScore(-(ScoreToAdd * 10));
-        }
-        else 
-        {
-            gameManager.UpdateScore(ScoreToAdd);
-        }
+        gameManager.UpdateScore(ScoreToAdd);
         
     }
     private void OnTriggerEnter(Collider other)
