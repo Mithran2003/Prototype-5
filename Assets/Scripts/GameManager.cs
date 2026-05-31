@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
             Instantiate(targets[index]);
         }
     }
-    private void OnMouseDown()
+    private void OnMouseDown() 
     {
         Destroy(gameObject);
     }
