@@ -13,16 +13,11 @@ public class target : MonoBehaviour
     private float ySpwanPoint;
     [SerializeField]
     private float torqueRange;
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Awake()
+    void Start()
     {
         targetRb = GetComponent<Rigidbody>();
         transform.position = randomSpwanPosition();
-    }
-    void Start()
-    {
-        
         targetRb.AddForce(randomForce(),ForceMode.Impulse);
         targetRb.AddTorque(randomTorque(),randomTorque(),randomTorque(),ForceMode.Impulse);
         
