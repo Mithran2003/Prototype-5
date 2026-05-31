@@ -46,6 +46,17 @@ public class GameManager : MonoBehaviour
         GameOverText.gameObject.SetActive(true);
         gameOver = true;
     }
+    public bool isGameRuning()
+    {
+        if (gameOver==true)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
         
     
 }
