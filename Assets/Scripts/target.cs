@@ -40,5 +40,13 @@ public class target : MonoBehaviour
     {
         return Random.Range(-torqueRange,torqueRange);
     }
+    private void OnMouseDown() 
+    {
+        Destroy(gameObject);
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        Destroy(gameObject);
+    }
 
 }

@@ -28,12 +28,4 @@ public class GameManager : MonoBehaviour
             Instantiate(targets[index]);
         }
     }
-    private void OnMouseDown() 
-    {
-        Destroy(gameObject);
-    }
-    void OnTriggerEnter(Collider other)
-    {
-        Destroy(gameObject);
-    }
 }
