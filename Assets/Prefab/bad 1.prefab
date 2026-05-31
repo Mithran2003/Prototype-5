@@ -181,4 +181,4 @@ MonoBehaviour:
   xSpwanRange: 4.25
   ySpwanPoint: -1.25
   torqueRange: 3
-  ScoreToAdd: 5
+  ScoreToAdd: -50
