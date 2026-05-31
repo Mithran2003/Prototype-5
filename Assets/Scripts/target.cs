@@ -16,13 +16,18 @@ public class target : MonoBehaviour
     private float torqueRange;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
         targetRb = GetComponent<Rigidbody>();
-        targetRb.AddForce(randomForce(),ForceMode.Impulse);
-        targetRb.AddTorque(randomTorque(),randomTorque(),randomTorque(),ForceMode.Impulse);
         spawnPoint = randomSpwanPosition();
         transform.position = spawnPoint;
+    }
+    void Start()
+    {
+        
+        targetRb.AddForce(randomForce(),ForceMode.Impulse);
+        targetRb.AddTorque(randomTorque(),randomTorque(),randomTorque(),ForceMode.Impulse);
+        
     }
 
     // Update is called once per frame

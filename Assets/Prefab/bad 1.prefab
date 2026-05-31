@@ -177,6 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::target
   minForce: 10
-  maxforce: 16.25
+  maxforce: 16
   xSpwanRange: 4.25
-  torqueRange: 5
+  ySpwanPoint: -1.25
+  torqueRange: 3
