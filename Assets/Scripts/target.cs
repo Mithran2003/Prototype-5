@@ -16,7 +16,8 @@ public class target : MonoBehaviour
     private GameManager gameManager;
     [SerializeField]
     private int ScoreToAdd; //added to the score each time an object is destroyed 
-    
+    [SerializeField]
+    private ParticleSystem explosionParticals;    
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -50,6 +51,7 @@ public class target : MonoBehaviour
     {
         Destroy(gameObject);
         gameManager.UpdateScore(ScoreToAdd);
+        Instantiate(explosionParticals,transform.position,explosionParticals.transform.rotation);
         
     }
     private void OnTriggerEnter(Collider other)

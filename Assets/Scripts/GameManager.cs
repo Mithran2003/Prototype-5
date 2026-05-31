@@ -10,12 +10,15 @@ public class GameManager : MonoBehaviour
     private float spwanDelay ;
     [SerializeField]
     private TextMeshProUGUI scoreText;
+    [SerializeField]
+    private TextMeshProUGUI GameOverText;
     private int score ;    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         score = 0;
         StartCoroutine(spwanObjects());
+        GameOverText.gameObject.SetActive(true);
     }
 
     // Update is called once per frame

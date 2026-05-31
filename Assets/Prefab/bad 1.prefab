@@ -182,3 +182,4 @@ MonoBehaviour:
   ySpwanPoint: -1.25
   torqueRange: 3
   ScoreToAdd: -50
+  explosionParticals: {fileID: 4758139293545943008, guid: c7ad2532a6eeb40b59033c75e71fa054, type: 3}
