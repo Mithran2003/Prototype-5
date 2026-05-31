@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
@@ -15,6 +16,8 @@ public class GameManager : MonoBehaviour
     private TextMeshProUGUI GameOverText;
     private int score ;  
     private bool gameOver ;  
+    [SerializeField]
+    private Button RestartButton;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -45,6 +48,7 @@ public class GameManager : MonoBehaviour
     }
     public void GameOver()
     {
+        RestartButton.gameObject.SetActive(true);
         GameOverText.gameObject.SetActive(true);
         gameOver = true;
     }
