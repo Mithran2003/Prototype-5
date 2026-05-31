@@ -12,13 +12,13 @@ public class GameManager : MonoBehaviour
     private TextMeshProUGUI scoreText;
     [SerializeField]
     private TextMeshProUGUI GameOverText;
-    private int score ;    
+    private int score ;  
+    private bool gameOver = false;  
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         score = 0;
         StartCoroutine(spwanObjects());
-        GameOverText.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     }
     IEnumerator spwanObjects()
     {
-        while(true)
+        while(gameOver==false)
         {
             yield return new WaitForSeconds(spwanDelay);
             int index = Random.Range(0,targets.Count);
@@ -39,6 +39,11 @@ public class GameManager : MonoBehaviour
     {
         score += scoreToAdd;
         scoreText.text ="Score:"+ score;
+    }
+    public void GameOver()
+    {
+        GameOverText.gameObject.SetActive(true);
+        gameOver = true;
     }
         
     
