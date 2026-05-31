@@ -8,8 +8,8 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField]
     private List<GameObject> targets ;
-    [SerializeField]
-    private float spwanDelay ;
+   // [SerializeField]
+    //private float spwanDelay ;
     [SerializeField]
     private TextMeshProUGUI scoreText;
     [SerializeField]
@@ -22,6 +22,9 @@ public class GameManager : MonoBehaviour
     private Button RestartButton;
     [SerializeField]
     private GameObject titleScreen;
+    private float easyDiff = 1.5f;
+    private float mediumDiff = 1.25f;
+    private float hardDiff = 1f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -33,7 +36,7 @@ public class GameManager : MonoBehaviour
     {
         
     }
-    IEnumerator spwanObjects()
+    IEnumerator spwanObjects(float spwanDelay)
     {
         while(gameOver==false)
         {
@@ -68,14 +71,28 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);         
     }
-    public void StartGame()
+    public void StartGame(string difficulti)
     {
         gameOver = false;
         score = 0;
-        StartCoroutine(spwanObjects());
         UpdateScore(0);
         ScoreText.gameObject.SetActive(true);
         titleScreen.gameObject.SetActive(false);
+        switch (difficulti)
+        {
+            case "Easy Button":
+                StartCoroutine(spwanObjects(easyDiff));
+                break;
+            case "Medium Button":
+                StartCoroutine(spwanObjects(mediumDiff));
+                break;
+            case "Hard Button":
+                StartCoroutine(spwanObjects(hardDiff));
+                break;
+            default:
+                StartCoroutine(spwanObjects(mediumDiff));
+                break;
+        }
     }   
     
 }
