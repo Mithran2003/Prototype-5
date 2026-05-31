@@ -4,14 +4,22 @@ public class target : MonoBehaviour
 {
     private Rigidbody targetRb;
     private Vector3 spawnPoint ;
+    [SerializeField] 
+    private float minForce;
+    [SerializeField] 
+    private float maxforce;
+    [SerializeField]
+    private float xSpwanRange;
+    [SerializeField]
+    private float torqueRange;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         targetRb = GetComponent<Rigidbody>();
-        targetRb.AddForce(Vector3.up * Random.Range(10,16),ForceMode.Impulse);
-        targetRb.AddTorque(Random.Range(-10,10),Random.Range(-10,10),Random.Range(-10,10),ForceMode.Impulse);
-        spawnPoint.x = Random.Range(-4.75f,4.75f);
-        spawnPoint.y = -1.75f;
+        targetRb.AddForce(randomForce(),ForceMode.Impulse);
+        targetRb.AddTorque(randomTorque(),randomTorque(),randomTorque(),ForceMode.Impulse);
+        spawnPoint = randomSpwanPosition();
         transform.position = spawnPoint;
     }
 
@@ -20,4 +28,17 @@ public class target : MonoBehaviour
     {
         
     }
+    private Vector3 randomForce()
+    {
+        return Vector3.up * Random.Range(minForce,maxforce);
+    }
+    private Vector3 randomSpwanPosition()
+    {
+        return new Vector3 (Random.Range(-xSpwanRange,xSpwanRange),-1.75f);
+    }
+    private float randomTorque()
+    {
+        return Random.Range(-torqueRange,torqueRange);
+    }
+
 }
