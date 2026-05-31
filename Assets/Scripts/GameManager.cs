@@ -13,10 +13,11 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI GameOverText;
     private int score ;  
-    private bool gameOver = false;  
+    private bool gameOver ;  
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        gameOver = false;
         score = 0;
         StartCoroutine(spwanObjects());
     }
