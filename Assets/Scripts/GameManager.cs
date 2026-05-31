@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
         gameOver = false;
         score = 0;
         StartCoroutine(spwanObjects());
+        UpdateScore(0);
     }
 
     // Update is called once per frame
@@ -56,6 +58,10 @@ public class GameManager : MonoBehaviour
         {
             return true;
         }
+    }
+    public void RestartScene() 
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);         
     }
         
     
