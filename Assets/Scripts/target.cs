@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using TMPro;
 public class target : MonoBehaviour
 {
     private Rigidbody targetRb;
@@ -13,6 +13,8 @@ public class target : MonoBehaviour
     private float ySpwanPoint;
     [SerializeField]
     private float torqueRange;
+    
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
