@@ -10,9 +10,7 @@ public class GameManager : MonoBehaviour
     private float spwanDelay ;
     [SerializeField]
     private TextMeshProUGUI scoreText;
-    private int score ;
-    [SerializeField]
-    private int spwanScore; //added to the score each time an object is spawned 
+    private int score ;    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -32,10 +30,9 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(spwanDelay);
             int index = Random.Range(0,targets.Count);
             Instantiate(targets[index]);
-            UpdateScore(spwanScore);
         }
     }
-    private void UpdateScore(int scoreToAdd)
+    public void UpdateScore(int scoreToAdd)
     {
         score += scoreToAdd;
         scoreText.text ="Score:"+ score;

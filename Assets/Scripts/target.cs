@@ -13,11 +13,15 @@ public class target : MonoBehaviour
     private float ySpwanPoint;
     [SerializeField]
     private float torqueRange;
+    private GameManager gameManager;
+    [SerializeField]
+    private int ScoreToAdd; //added to the score each time an object is destroyed 
     
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         targetRb = GetComponent<Rigidbody>();
         transform.position = randomSpwanPosition();
         targetRb.AddForce(randomForce(),ForceMode.Impulse);
@@ -45,6 +49,15 @@ public class target : MonoBehaviour
     private void OnMouseDown() 
     {
         Destroy(gameObject);
+        if (gameObject.name !="bad 1")
+        {
+            gameManager.UpdateScore(ScoreToAdd);
+        }
+        else if (gameObject.name == "bad 1")
+        {
+            gameManager.UpdateScore(-ScoreToAdd*10);
+        }
+        
     }
     private void OnTriggerEnter(Collider other)
     {
